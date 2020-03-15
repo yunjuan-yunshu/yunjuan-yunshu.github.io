@@ -11,7 +11,7 @@
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
     <meta name="description" content="转自 https://www.cnblogs.com/iAmSoScArEd/p/10651947.html#auto_id_1
-1.SQL注入漏洞描述:  Web程序中对于用户提交的参数未做过滤直,"> 
+1.SQL注入漏洞描述  Web程序中对于用户提交的参数未做过滤直接,"> 
     <meta name="author" content="John Doe"> 
     <link rel="alternative" href="atom.xml" title="hello" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -62,8 +62,8 @@
         </div>
         <div class="content markdown">
             <p>转自 <a href="https://www.cnblogs.com/iAmSoScArEd/p/10651947.html#auto_id_1" target="_blank" rel="noopener">https://www.cnblogs.com/iAmSoScArEd/p/10651947.html#auto_id_1</a></p>
-<h5 id="1-SQL注入"><a href="#1-SQL注入" class="headerlink" title="1.SQL注入"></a>1.SQL注入</h5><h6 id="漏洞描述"><a href="#漏洞描述" class="headerlink" title="漏洞描述:"></a>漏洞描述:</h6><p>  Web程序中对于用户提交的参数未做过滤直接拼接到SQL语句中执行，导致参数中的特殊字符破坏了SQL语句原有逻辑，攻击者可以利用该漏洞执行任意SQL语句，<br>如查询数据、下载数据、写入webshell、执行系统命令以及绕过登录限制等。</p>
-<h6 id="修复建议"><a href="#修复建议" class="headerlink" title="修复建议:"></a>修复建议:</h6><p>代码层最佳防御sql漏洞方案：使用预编译sql语句查询和绑定变量。</p>
+<h5 id="1-SQL注入"><a href="#1-SQL注入" class="headerlink" title="1.SQL注入"></a>1.SQL注入</h5><h6 id="漏洞描述"><a href="#漏洞描述" class="headerlink" title="漏洞描述"></a>漏洞描述</h6><p>  Web程序中对于用户提交的参数未做过滤直接拼接到SQL语句中执行，导致参数中的特殊字符破坏了SQL语句原有逻辑，攻击者可以利用该漏洞执行任意SQL语句，<br>如查询数据、下载数据、写入webshell、执行系统命令以及绕过登录限制等。</p>
+<h6 id="修复建议"><a href="#修复建议" class="headerlink" title="修复建议"></a>修复建议</h6><p>代码层最佳防御sql漏洞方案：使用预编译sql语句查询和绑定变量。</p>
 <p>1.使用预编译语句，使用PDO需要注意不要将变量直接拼接到PDO语句中。所有的查询语句都使用数据库提供的参数化查询接口，参数化的语句使用参数而不是将用户输入变量嵌入到SQL语句中。当前几乎所有的数据库系统都提供了参数化SQL语句执行接口，使用此接口可以非常有效的防止SQL注入攻击。</p>
 <p>2.对进入数据库的特殊字符（’”&lt;&gt;&amp;*;等）进行转义处理，或编码转换。</p>
 <p>3.确认每种数据的类型，比如数字型的数据就必须是数字，数据库中的存储字段必须对应为int型。</p>
@@ -72,7 +72,7 @@
 <p>6.严格限制网站用户的数据库的操作权限，给此用户提供仅仅能够满足其工作的权限，从而最大限度的减少注入攻击对数据库的危害。</p>
 <p>7.避免网站显示SQL错误信息，比如类型错误、字段不匹配等，防止攻击者利用这些错误信息进行一些判断。</p>
 <p>8.过滤危险字符，例如：采用正则表达式匹配union、sleep、and、select、load_file等关键字，如果匹配到则终止运行。</p>
-<h5 id="2-XSS"><a href="#2-XSS" class="headerlink" title="2.XSS"></a>2.XSS</h5><h6 id="漏洞描述-1"><a href="#漏洞描述-1" class="headerlink" title="漏洞描述:"></a>漏洞描述:</h6><p>1.Web程序代码中对用户提交的参数未做过滤或过滤不严，导致参数中的特殊字符破坏了HTML页面的原有逻辑，攻击者可以利用该漏洞执行恶意HTML/JS代码、构造蠕虫、篡改页面实施钓鱼攻击、以及诱导用户再次登录，然后获取其登录凭证等。</p>
+<h5 id="2-XSS"><a href="#2-XSS" class="headerlink" title="2.XSS"></a>2.XSS</h5><h6 id="漏洞描述-1"><a href="#漏洞描述-1" class="headerlink" title="漏洞描述"></a>漏洞描述</h6><p>1.Web程序代码中对用户提交的参数未做过滤或过滤不严，导致参数中的特殊字符破坏了HTML页面的原有逻辑，攻击者可以利用该漏洞执行恶意HTML/JS代码、构造蠕虫、篡改页面实施钓鱼攻击、以及诱导用户再次登录，然后获取其登录凭证等。</p>
 <p>2.XSS攻击对Web服务器本身虽无直接危害，但是它借助网站进行传播，对网站用户进行攻击，窃取网站用户账号身份信息等，从而也会对网站产生较严重的威胁。</p>
 <p>XSS攻击可导致以下危害：</p>
 <p>　　1.钓鱼欺骗：最典型的就是利用目标网站的反射型跨站脚本漏洞将目标网站重定向到钓鱼网站，或者通过注入钓鱼JavaScript脚本以监控目标网站的表单输入，甚至攻击者基于DHTML技术发起更高级的钓鱼攻击。</p>
@@ -82,12 +82,32 @@
 <p>　　5.垃圾信息发送：在社交网站社区中，利用XSS漏洞借用被攻击者的身份发送大量的垃圾信息给特定的目标群。</p>
 <p>　　6.劫持用户Web行为：一些高级的XSS攻击甚至可以劫持用户的Web行为，从而监视用户的浏览历史、发送与接收的数据等等。</p>
 <p>　　7.XSS蠕虫：借助XSS蠕虫病毒还可以用来打广告、刷流量、挂马、恶作剧、破坏数据、实施DDoS攻击等。</p>
-<h6 id="修复建议-1"><a href="#修复建议-1" class="headerlink" title="修复建议:"></a>修复建议:</h6><p>xss漏洞本质上是一种html注入，也就是将html代码注入到网页中。那么其防御的根本就是在将用户提交的代码显示到页面上时做好一系列的过滤与转义</p>
+<h6 id="修复建议-1"><a href="#修复建议-1" class="headerlink" title="修复建议"></a>修复建议</h6><p>xss漏洞本质上是一种html注入，也就是将html代码注入到网页中。那么其防御的根本就是在将用户提交的代码显示到页面上时做好一系列的过滤与转义</p>
 <p>　　1.过滤输入的数据，对例如：“ ‘ ”，“ “ ”，” &lt; “，” &gt; “，” on* “，script、iframe等危险字符进行严格的检查。这里的输入不仅仅是用户可以直接交互的输入接口，也包括HTTP请求中的Cookie中的变量，HTTP请求头部中的变量等。</p>
 <p>　　2.不仅验证数据的类型，还要验证其格式、长度、范围和内容。</p>
 <p>　　3.不仅在客户端做数据的验证与过滤，关键的过滤步骤在服务端进行。</p>
 <p>　　4.对输出到页面的数据进行相应的编码转换，如HTML实体编码、JS编码等。对输出的数据也要检查，数据库里的值有可能会在一个大网站的多处都有输出，即使在输入做了编码等操作，在各处的输出点时也要进行检查。</p>
 <h5 id="3-XXE"><a href="#3-XXE" class="headerlink" title="3.XXE"></a>3.XXE</h5><h6 id="漏洞描述-2"><a href="#漏洞描述-2" class="headerlink" title="漏洞描述:"></a>漏洞描述:</h6><p>参考：<a href="https://www.freebuf.com/company-information/165769.html" target="_blank" rel="noopener">https://www.freebuf.com/company-information/165769.html</a></p>
+<h5 id="4-CSRF"><a href="#4-CSRF" class="headerlink" title="4.CSRF"></a>4.CSRF</h5><h6 id="漏洞描述-3"><a href="#漏洞描述-3" class="headerlink" title="漏洞描述"></a>漏洞描述</h6><p>  CSRF是跨站请求伪造，不攻击网站服务器，而是冒充用户在站内的正常操作。通常由于服务端没有对请求头做严格过滤引起的。CSRF会造成密码重置，用户伪造等问题，可能引发严重后果。绝大多数网站是通过 cookie 等方式辨识用户身份，再予以授权的。所以要伪造用户的正常操作，最好的方法是通过 XSS 或链接欺骗等途径，让用户在本机（即拥有身份 cookie 的浏览器端）发起用户所不知道的请求。CSRF攻击会令用户在不知情的情况下攻击自己已经登录的系统。</p>
+<h6 id="修复建议-2"><a href="#修复建议-2" class="headerlink" title="修复建议"></a>修复建议</h6><p>　　1.验证请求的Referer是否来自本网站，但可被绕过。</p>
+<p>　　2.在请求中加入不可伪造的token，并在服务端验证token是否一致或正确，不正确则丢弃拒绝服务。</p>
+<h5 id="5-SSRF"><a href="#5-SSRF" class="headerlink" title="5.SSRF"></a>5.SSRF</h5><h6 id="漏洞描述-4"><a href="#漏洞描述-4" class="headerlink" title="漏洞描述"></a>漏洞描述</h6><p>  SSRF（Server-Side Request Forgery，服务器端请求伪造）：通俗的来说就是我们可以伪造服务器端发起的请求，从而获取客户端所不能得到的数据。SSRF漏洞形成的原因主要是服务器端所提供的接口中包含了所要请求的内容的URL参数，并且未对客户端所传输过来的URL参数进行过滤。这个漏洞造成的危害有：<br>    1.可以对外网、服务器所在内网、本地进行端口扫描，获取一些服务的banner信息;</p>
+<p>　　2.攻击运行在内网或本地的应用程序（比如溢出）;</p>
+<p>　　3.对内网Web应用进行指纹识别，通过访问默认文件实现;</p>
+<p>　　4.攻击内外网的Web应用，主要是使用Get参数就可以实现的攻击（比如Struts2漏洞利用，SQL注入等）;</p>
+<p>　　5.利用File协议读取本地文件。</p>
+<h6 id="修复建议-3"><a href="#修复建议-3" class="headerlink" title="修复建议"></a>修复建议</h6><p>　　1.禁用不需要的协议，只允许HTTP和HTTPS请求，可以防止类似于file://, gopher://, ftp:// 等引起的问题。</p>
+<p>　　2.白名单的方式限制访问的目标地址，禁止对内网发起请求</p>
+<p>　　3.过滤或屏蔽请求返回的详细信息，验证远程服务器对请求的响应是比较容易的方法。如果web应用是去获取某一种类型的文件。那么在把返回结果展示给用户之前先验证返回的信息是否符合标准。</p>
+<p>　　4.验证请求的文件格式</p>
+<p>　　5.禁止跳转</p>
+<p>　　6.限制请求的端口为http常用的端口，比如 80、443、8080、8000等</p>
+<p>　　7.统一错误信息，避免用户可以根据错误信息来判断远端服务器的端口状态。</p>
+<h5 id="6-任意命令-代码执行"><a href="#6-任意命令-代码执行" class="headerlink" title="6.任意命令/代码执行"></a>6.任意命令/代码执行</h5><h6 id="漏洞描述-5"><a href="#漏洞描述-5" class="headerlink" title="漏洞描述"></a>漏洞描述</h6><p>  命令或代码执行漏洞是指代码未对用户可控参数做过滤，导致直接带入执行命令和代码，通过漏洞执行恶意构造的语句，执行任意命令或代码。攻击者可在服务器上执行任意命令，读写文件操作等，危害巨大。<br>修复建议</p>
+<p>　　1、严格过滤用户输入的数据，禁止执行非预期系统命令。</p>
+<p>　　2、减少或不使用代码或命令执行函数</p>
+<p>　　3、客户端提交的变量在放入函数前进行检测</p>
+<p>　　4、减少或不使用危险函数</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -115,7 +135,7 @@
     </div>
     
         <div class='side'>
-			<ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-SQL注入"><span class="toc-number">1.</span> <span class="toc-text">1.SQL注入</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#漏洞描述"><span class="toc-number">1.1.</span> <span class="toc-text">漏洞描述:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#修复建议"><span class="toc-number">1.2.</span> <span class="toc-text">修复建议:</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-XSS"><span class="toc-number">2.</span> <span class="toc-text">2.XSS</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#漏洞描述-1"><span class="toc-number">2.1.</span> <span class="toc-text">漏洞描述:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#修复建议-1"><span class="toc-number">2.2.</span> <span class="toc-text">修复建议:</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-XXE"><span class="toc-number">3.</span> <span class="toc-text">3.XXE</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#漏洞描述-2"><span class="toc-number">3.1.</span> <span class="toc-text">漏洞描述:</span></a></li></ol></li></ol>	
+			<ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-SQL注入"><span class="toc-number">1.</span> <span class="toc-text">1.SQL注入</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#漏洞描述"><span class="toc-number">1.1.</span> <span class="toc-text">漏洞描述</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#修复建议"><span class="toc-number">1.2.</span> <span class="toc-text">修复建议</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-XSS"><span class="toc-number">2.</span> <span class="toc-text">2.XSS</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#漏洞描述-1"><span class="toc-number">2.1.</span> <span class="toc-text">漏洞描述</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#修复建议-1"><span class="toc-number">2.2.</span> <span class="toc-text">修复建议</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-XXE"><span class="toc-number">3.</span> <span class="toc-text">3.XXE</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#漏洞描述-2"><span class="toc-number">3.1.</span> <span class="toc-text">漏洞描述:</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-CSRF"><span class="toc-number">4.</span> <span class="toc-text">4.CSRF</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#漏洞描述-3"><span class="toc-number">4.1.</span> <span class="toc-text">漏洞描述</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#修复建议-2"><span class="toc-number">4.2.</span> <span class="toc-text">修复建议</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-SSRF"><span class="toc-number">5.</span> <span class="toc-text">5.SSRF</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#漏洞描述-4"><span class="toc-number">5.1.</span> <span class="toc-text">漏洞描述</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#修复建议-3"><span class="toc-number">5.2.</span> <span class="toc-text">修复建议</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-任意命令-代码执行"><span class="toc-number">6.</span> <span class="toc-text">6.任意命令&#x2F;代码执行</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#漏洞描述-5"><span class="toc-number">6.1.</span> <span class="toc-text">漏洞描述</span></a></li></ol></li></ol>	
         </div>
     
 </div>
